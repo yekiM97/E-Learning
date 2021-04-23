@@ -1,0 +1,225 @@
+    <!-- BEGIN BANNER -->
+    <section class="banner">
+        <div class="carousel">
+            <div class="carousel-caption">
+                <div class="container-fluid">
+                    <h2 class="caption-title">Learn on your schedule</h2>
+                    <div class="caption-text">
+                        Study any topic, anytime. Choose from thousands of expert-led courses now.
+                    </div>
+                    <form class="input-group nav-search caption-search">
+                        <input type="text" class="form-control" placeholder="What do you want to learn?">
+                        <div class="input-group-append">
+                            <button class="btn bg-white text-danger"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="banner-bottom">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+                        <span><i class="fa fa-cubes"></i></span>
+                        <div class="banner-bottom-text">
+                            <b>100,000 online courses</b>
+                            <div class="sub-title">
+                                Explore a variety of fresh topics
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+                        <span><i class="fa fa-joomla"></i></span>
+                        <div class="banner-bottom-text">
+                            <b>Expert instruction</b>
+                            <div class="sub-title">
+                                Find the right instructor for you
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+                        <span><i class="fa fa-gg"></i></span>
+                        <div class="banner-bottom-text">
+                            <b>Lifetime access</b>
+                            <div class="sub-title">
+                                Learn on your schedule
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END BANNER -->
+
+    <!-- BENGIN SELLER -->
+    <section class="best-seller">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 pb-4 pt-5">
+                    <div class="h-100 best-seller-sologan">
+                        <div class="px-5">
+                            <h5 class="font-weight-bold">The world’s largest selection of courses</h5>
+                            <p>Choose from over 100,000 online video courses with new additions published every month.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8" >
+                    <h3 class="title">Sale off</h3>
+                    <div class="row"   >
+                        <div class="col-md-3" *ngFor="let item of listCourse" >
+                            <div class="course" *ngIf="item.discount > 0 ">
+                                <img src="../../../assets/img/{{item.image}}" />
+                                <h6 class="course-title">{{item.title}}</h6>
+                                <small class="course-content">
+                                    {{item.content}}
+                                </small>
+                                <div class="course-price">
+                                    <span>{{item.promotion_price}} đ</span>
+                                    <small>{{item.price}} đ</small>
+                                </div>
+                                <div class="seller-label">Sale {{item.discount}}%</div>
+                                <div class="course-overlay">
+                                    <a [routerLink]="['myCourse', item?.id, 'details']"  routerLinkActive="active">
+                                        <h6 class="course-title">
+                                            {{item.title}}
+                                        </h6>
+                                        <div class="course-author">
+                                            <b>{{item.author}}</b>
+                                            <span class="mx-1"> | </span>
+                                            <b>{{item.position}}</b>
+                                        </div>
+                                        <div class="course-info">
+                                            <span><i class="fa fa-play-circle"></i> {{item.leture_count}} lectures</span>
+                                            <span class="mx-1"> | </span>
+                                            <span><i class="fa fa-clock-o"></i> {{item.hour_count}} hours</span>
+                                        </div>
+                                        <small class="course-content">
+                                            {{item.content}}
+                                        </small>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-danger text-white w-100">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SELLER -->
+
+    <!-- BEGIN POPULAR -->
+    <section class="popular" >
+        <div class="container-fluid">
+            <h3 class="title mt-0">Popular course</h3>
+            <div class="row">
+                <div class="col-md-2" *ngFor="let item of listCourse">
+                    <div class="course">
+                        <img src="../../../assets/img/{{item.image}}" />
+                        <h6 class="course-title">{{item.title}}</h6>
+                        <small class="course-content">
+                            {{item.content}}
+                        </small>
+                        <div class="course-price">
+                            <span> {{item.price}} đ</span>
+                        </div>
+                        <div class="course-overlay">
+                            <a [routerLink]="['myCourse', item?.id, 'details']"  routerLinkActive="active">
+                                <h6 class="course-title">
+                                    {{item.title}}
+                                </h6>
+                                <div class="course-author">
+                                    <b>{{item.author}}</b>
+                                    <span class="mx-1"> | </span>
+                                    <b>{{item.position}}</b>
+                                </div>
+                                <div class="course-info">
+                                    <span><i class="fa fa-play-circle"></i>  {{item.leture_count}} lectures</span>
+                                    <span class="mx-1"> | </span>
+                                    <span><i class="fa fa-clock-o"></i>  {{item.hour_count}} hours</span>
+                                </div>
+                                <small class="course-content">
+                                    {{item.content}}
+                                </small>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-danger text-white w-100">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            
+        </div>
+    </section>
+    <section class="categories">
+        <div class="container-fluid">
+            <h3 class="title mt-0">Top Categories</h3>
+            <div class="row" >
+                <div class="col-md-3" *ngFor="let item of listIcon">
+                    <a class="category" >
+                        <i class="{{item.icon}} mr-1"></i>
+                        <span>{{item.name}}</span>
+                    </a>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback">
+        <div class="container-fluid">
+            <h3 class="title mt-3">What our students have to say</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feedback-item">
+                        <div class="feedback-info">
+                            <div class="feedback-img">
+                                <img src="../../../assets/img/user1.jpg" alt="user1">
+                            </div>
+                            <b>Borivoje</b>
+                        </div>
+                        <div class="feedback-content">
+                            Elearning is a life saver. I don't have the time or money for a college education. My goal
+                            is to
+                            become a freelance web developer, and thanks to Udemy, I'm really close.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feedback-item">
+                        <div class="feedback-info">
+                            <div class="feedback-img">
+                                <img src="../../../assets/img/user2.jpg" alt="user1">
+                            </div>
+                            <b>Borivoje</b>
+                        </div>
+                        <div class="feedback-content">
+                            Elearning is a life saver. I don't have the time or money for a college education. My goal
+                            is to
+                            become a freelance web developer, and thanks to Udemy, I'm really close.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feedback-item">
+                        <div class="feedback-info">
+                            <div class="feedback-img">
+                                <img src="../../../assets/img/user3.jpg" alt="user1">
+                            </div>
+                            <b>Borivoje</b>
+                        </div>
+                        <div class="feedback-content">
+                            Elearning is a life saver. I don't have the time or money for a college education. My goal
+                            is to
+                            become a freelance web developer, and thanks to Udemy, I'm really close.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   

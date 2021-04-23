@@ -1,0 +1,272 @@
+<!-- <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href="#">Elearning</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+        data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+        aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse row" id="collapsibleNavId">
+        <div class="col-md-6">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 d-flex align-items-center justify-content-between">
+                <li class="nav-item mr-3">
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-th"></i>
+                            <span class="ml-2">Categories</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" *ngFor="let item of listIcon">
+                                <i class="{{item.icon}} mr-1"></i>
+                                <span>{{item.name}}</span>
+                            </a>
+                           
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item w-100">
+                    <form class="input-group nav-search" style="border: 1px solid grey; border-radius: 4px;">
+                        <input type="text" class="form-control" placeholder="Search courses">
+                        <div class="input-group-append ">
+                            <button class="btn bg-white text-danger "><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-1 nav-cart">
+            <i class="fa fa-shopping-basket"></i>
+        </div>
+        <div class="col-md-5 text-right" >
+            <div *ngIf="this.isLogin === false">
+                <button class="btn btn-outline-secondary" (click)="openModal(true,addOrUpdateForm1)"
+                >Login</button>
+                <button class="btn btn-danger ml-2" (click)="openModal(false,addOrUpdateForm2)">Sign up</button>
+            </div>  
+
+            <div  *ngIf="this.isLogin === true">
+                <div class="dropdown">
+                    <div class="dropdown-toggle font-weight-bold text-dark" data-toggle="dropdown">
+                        {{user?.fullname}}
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item"  routerLink="/profile"  routerLinkActive="active">Thông tin cá nhân</a>
+                        <a class="dropdown-item"  routerLink="/myCourse"  routerLinkActive="active">Khóa học của tôi</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" (click)="logOut()">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+     
+    </div>
+</nav> -->
+
+<app-ui-preloader [display]="this.loading"></app-ui-preloader>
+<div *ngIf="this.isLogin === false">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="#">Elearning</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+            data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+            aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse row" id="collapsibleNavId">
+            <div class="col-md-6">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 d-flex align-items-center justify-content-between">
+                    <li class="nav-item mr-3">
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-th"></i>
+                                <span class="ml-2">Categories</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#" *ngFor="let item of listIcon">
+                                    <i class="{{item.icon}} mr-1"></i>
+                                    <span>{{item.name}}</span>
+                                </a>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item w-100">
+                        <form class="input-group nav-search" style="border: 1px solid grey; border-radius: 4px;">
+                            <input type="text" class="form-control" placeholder="Search courses">
+                            <div class="input-group-append ">
+                                <button class="btn bg-white text-danger "><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-1 nav-cart">
+                <i class="fa fa-shopping-basket"></i>
+            </div>
+            <div class="col-md-5 text-right" >
+            
+                    <button class="btn btn-outline-secondary" (click)="openModal(true,addOrUpdateForm1)"
+                    >Login</button>
+                    <button class="btn btn-danger ml-2" (click)="openModal(false,addOrUpdateForm2)">Sign up</button>
+            </div>
+            
+        
+        </div>
+    </nav>
+</div>  
+
+<div  *ngIf="this.isLogin === true">
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href="#">Elearning</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+        data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+        aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse row" id="collapsibleNavId">
+        <div class="col-md-6">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 d-flex align-items-center justify-content-between">
+                <li class="nav-item mr-3">
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-th"></i>
+                            <span class="ml-2">Categories</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" *ngFor="let item of listIcon">
+                                <i class="{{item.icon}} mr-1"></i>
+                                <span>{{item.name}}</span>
+                            </a>
+                           
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item w-100">
+                    <form class="input-group nav-search" style="border: 1px solid grey; border-radius: 4px;">
+                        <input type="text" class="form-control" placeholder="Search courses">
+                        <div class="input-group-append ">
+                            <button class="btn bg-white text-danger "><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-1 nav-cart">
+            <i class="fa fa-shopping-basket"></i>
+        </div>
+        <div class="col-md-5 text-right" >
+           
+                <div class="dropdown">
+                    <div class="dropdown-toggle font-weight-bold text-dark" data-toggle="dropdown">
+                        {{user?.fullname}}
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item"  routerLink="/profile" >Thông tin cá nhân</a>
+                        <a class="dropdown-item"  routerLink="/myCourse" >Khóa học của tôi</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" (click)="logOut()" routerLink="/"  >Đăng xuất</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</nav>
+</div>
+
+
+
+<ng-template #addOrUpdateForm1 let-modal="close">
+    <form>
+    <!-- SIGN IN MODAL -->
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title">Đăng nhập</h4>
+            <button (click)="modal('Cross click')" aria-label="Close" class="close text-black" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form [formGroup]="formSignIn">
+                <div class="form-group">
+                    <label >Email</label>
+                    <input type="text" class="form-control" formControlName="email" [ngClass]="{'success': formSignIn.controls.email.valid}">
+                    <div  *ngIf="formSignIn.controls.email.invalid && formSignIn.controls.email.touched" class="error" >
+                        <label class="label">Email Required</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label >Password</label>
+                    <input type="password" class="form-control" formControlName="password" [ngClass]="{'success': formSignIn.controls.password.valid}">
+                    <div  *ngIf="formSignIn.controls.password.invalid && formSignIn.controls.password.touched" class="error" >
+                        <label class="label">Password Required</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="onSubmit(this.formSignIn.value)" [disabled]="!formSignIn.valid"  (keyup.enter)="this.loading = true">Đăng nhập</button>
+            <button type="button" class="btn btn-danger"  (click)="closeModal(modal)">Thoát</button>
+        </div>
+    </form>
+</ng-template>
+
+
+<ng-template #addOrUpdateForm2 let-modal="close">
+    <form >
+    <!-- SIGN UP MODAL -->
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title">Đăng ký</h4>
+            <button (click)="modal('Cross click')" aria-label="Close" class="close text-black" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form [formGroup]="formSignUp">
+                <div class="form-group">
+                    <label >Name</label>
+                    <input type="text" class="form-control"  formControlName="fullname" required [ngClass]="{'success': formSignUp.controls.fullname.valid}">
+                    <div  *ngIf="formSignUp.controls.fullname.invalid && formSignUp.controls.fullname.touched" class="error" >
+                        <label class="label">Fullname Required</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control"  formControlName="email" required [ngClass]="{'success': formSignUp.controls.email.valid}">
+                    <div  *ngIf="formSignUp.controls.email.invalid && formSignUp.controls.email.touched" class="error" >
+                        <label class="label">Email Required</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label >Password</label>
+                    <input type="password" class="form-control" required formControlName="password" [ngClass]="{'success': formSignUp.controls.password.valid}">
+                    <div   *ngIf="formSignUp.controls.password.invalid && formSignUp.controls.password.touched  " class="error">
+                        <label class="label">Password required</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Confirm</label>
+                    <input type="password" class="form-control"  formControlName="confirmPassword" required [ngClass]="{'success': formSignUp.controls.confirmPassword.valid && (formSignUp.controls.confirmPassword.value == formSignUp.controls.password.value) }">
+                    <div  *ngIf="formSignUp.controls.confirmPassword.invalid && formSignUp.controls.confirmPassword.touched  " class="error" >
+                        <div *ngIf="formSignUp.controls.password.errors?.required">
+                            <label class="label">Confirm password required</label>
+                        </div>
+                      
+                    </div>
+                    <div  *ngIf="!(formSignUp.controls.confirmPassword.value === formSignUp.controls.password.value)" class="error" >
+                        <label class="label">Password mismatch</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="onSubmit(this.formSignUp.value)" [disabled]="formSignUp.invalid || (formSignUp.controls.confirmPassword.errors?.required || !(formSignUp.controls.confirmPassword.value === formSignUp.controls.password.value))">Đăng ký</button>
+            <button type="button" class="btn btn-danger" (click)="closeModal(modal)">Thoát</button>
+        </div>
+    </form>
+</ng-template>
+
+
+
+
+
