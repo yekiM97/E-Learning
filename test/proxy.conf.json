@@ -1,0 +1,14 @@
+{
+  "/api/v1/engine-rest": {
+    "target": "http://localhost:9091",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1": {
+    "target": "http://localhost:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
